@@ -229,6 +229,7 @@ public class StatusController : MonoBehaviour
             mana -= 10;
             AtualizarManaBar();
         }
+        
     }
 
     public void CountStatus()
