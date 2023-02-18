@@ -4,20 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Loader.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
-    guid: d6603d0b647e7f74092a7c97597542e2
-  - enabled: 1
-    path: Assets/Scenes/GamePlayWarrior.unity
-    guid: 8e845642a234710448547dcd18db888e
-  - enabled: 1
-    path: Assets/Scenes/GamePlayWizard.unity
-    guid: 8524ef7a712de2f4fbd91ce97eef9935
-  - enabled: 1
-    path: Assets/Scenes/GamePlayArcher.unity
-    guid: 7d25c2db9051cbc4c85e2b5511fb886c
+  m_Scenes: []
   m_configObjects: {}

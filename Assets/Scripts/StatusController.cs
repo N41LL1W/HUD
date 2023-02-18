@@ -71,16 +71,19 @@ public class StatusController : MonoBehaviour
     public float criticalDamage;
 
     [Header("Slider Health")]
+    public Text textHealth;
     public Slider sliderHealth;
-    //public Image colorHealth;
+    public Image colorHealth;
     
     [Header("Slider Mana")]
+    public Text textMana;
     public Slider sliderMana;
-    //public Image colorMana;
+    public Image colorMana;
     
     [Header("Slider Experience")]
+    public Text textXp;
     public Slider sliderXp;
-    //public Image colorXp;
+    public Image colorXp;
     
     [Header("Stats Window")]
     public Text Level;
@@ -155,7 +158,6 @@ public class StatusController : MonoBehaviour
             damageBuff = (energy / 7) + 3;
             defenseBuff = (energy / 8) + 2;
             heal = (energy / 5) + 5;
-            StatusWindows();
         }
 
         else if (typeClass == Class.Wizard)
@@ -180,7 +182,6 @@ public class StatusController : MonoBehaviour
             damageBuff = (energy / 7) + 3;
             defenseBuff = (energy / 8) + 2;
             heal = (energy / 5) + 5;
-            StatusWindows();
         }
                 
         else if (typeClass == Class.Archer)
@@ -205,7 +206,6 @@ public class StatusController : MonoBehaviour
             damageBuff = (energy / 7) + 3;
             defenseBuff = (energy / 8) + 2;
             heal = (energy / 5) + 5;
-            StatusWindows();
         }
         StatusWindows();
     }
@@ -229,7 +229,6 @@ public class StatusController : MonoBehaviour
             mana -= 10;
             AtualizarManaBar();
         }
-        
     }
 
     public void CountStatus()
@@ -313,21 +312,24 @@ public class StatusController : MonoBehaviour
     
     public void AtualizarHealthBar()
     {
-        sliderHealth.maxValue = (int)healthMax;
-        sliderHealth.value = (int)health;
+        textHealth.text = "" + health;
+        sliderHealth.maxValue = (float)healthMax;
+        sliderHealth.value = (float)health;
         
         //colorHealth.color = Color.red;
     }
     
     public void AtualizarManaBar()
     {
-        sliderMana.maxValue = (int)manaMax;
-        sliderMana.value = (int)mana;
+        textMana.text = "" + mana;
+        sliderMana.maxValue = (float)manaMax;
+        sliderMana.value = (float)mana;
         
         //colorMana.color = Color.blue;
     }
     public void AtualizarXpBar()
     {
+        textXp.text = "" + nextLevel;
         sliderXp.maxValue = xpNextLevel;
         sliderXp.value = exp;
         
@@ -365,21 +367,21 @@ public class StatusController : MonoBehaviour
     {
         //Stats Windows
         Level.text = "Level: " + level.ToString();
-        Xp.text = "Xp: " + (int)exp;
-        NextLevel.text = "Next Level " + (int)nextLevel;
-        XpNextLevel.text = "Xp Next Level: " + (int)xpNextLevel;
-        Health.text = "Health: " + (int)health;
+        Xp.text = "Xp: " + exp;
+        NextLevel.text = "Next Level " + nextLevel;
+        XpNextLevel.text = "Xp Next Level: " + xpNextLevel;
+        Health.text = "Health: " + health;
         HealthRegen.text = "Health Regen: " + HealthRegen;
-        Mana.text = "Mana: " + (int)mana;
+        Mana.text = "Mana: " + mana;
         ManaRegen.text = "ManaRegen: " + ManaRegen;
-        Speed.text = "Speed: " + (int)speed;
-        MinDamage.text = "Min Damage: " + (int)minDamage;
-        MaxDamage.text = "Max Damage: " + (int)maxDamage;
-        MinMagicDamage.text = "Min Magic Damage: " + (int)minMagicDamage;
-        MaxMagicDamage.text = "Max Magic Damage: " + (int)maxMagicDamage;
-        Combo.text = "Combo: " + (int)comboBase;
+        Speed.text = "Speed: " + speed;
+        MinDamage.text = "Min Damage: " + minDamage;
+        MaxDamage.text = "Max Damage: " + maxDamage;
+        MinMagicDamage.text = "Min Magic Damage: " + minMagicDamage;
+        MaxMagicDamage.text = "Max Magic Damage: " + maxMagicDamage;
+        Combo.text = "Combo: " + comboBase;
         Defense.text = "Defence: " + defense;
-        Skill.text = "Skill: " + (int)skill;
-        Fornitude.text = "Fornitude: " + (int)fornitude;
+        Skill.text = "Skill: " + skill;
+        Fornitude.text = "Fornitude: " + fornitude;
     }
 }
